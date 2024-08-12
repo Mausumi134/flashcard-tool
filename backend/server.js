@@ -5,7 +5,12 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const port = 5000;
-app.use(cors()); // Ensure this line is present
+
+
+app.use(cors({
+  origin: 'https://guileless-kulfi-7d7acf.netlify.app/'
+}));
+// Ensure this line is present
 
 // Database Connection
 const db = mysql.createConnection({
