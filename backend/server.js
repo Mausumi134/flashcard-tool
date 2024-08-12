@@ -4,17 +4,17 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000; // Use environment variable for port
 
-
-app.use(cors()); // Ensure this line is present
+app.use(cors());
+app.use(bodyParser.json());
 
 // Database Connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'flashcard_db'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 db.connect(err => {
@@ -22,26 +22,17 @@ db.connect(err => {
   console.log('Connected to database');
 });
 
-app.use(cors());
-app.use(bodyParser.json());
-
 // Routes
-// backend/server.js
 app.get('/flashcards', (req, res) => {
-    db.query('SELECT * FROM flashcards', (err, results) => {
-      if (err) {
-        console.error('Database query error:', err);
-        res.status(500).json({ error: 'Database query error' });
-        return;
-      }
-      console.log('Flashcards:', results); // Log results
-      res.json(results);
-    });
+  db.query('SELECT * FROM flashcards', (err, results) => {
+    if (err) {
+      console.error('Database query error:', err);
+      res.status(500).json({ error: 'Database query error' });
+      return;
+    }
+    res.json(results);
   });
-  
-  
-  
-  
+});
 
 app.post('/flashcards', (req, res) => {
   const { question, answer } = req.body;
