@@ -1,0 +1,106 @@
+/* src/Dashboard.css */
+
+.dashboard {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-flashcard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-flashcard input {
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .add-flashcard button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-flashcard button:hover {
+    background-color: #0056b3;
+  }
+  
+  .flashcard-list {
+    margin-top: 20px;
+  }
+  
+  .flashcard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .flashcard-item-content {
+    flex: 1;
+  }
+  
+  .flashcard-item button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .flashcard-item button:hover {
+    background-color: #c82333;
+  }
+  /* src/Dashboard.css */
+/* Existing styles... */
+
+.nav-buttons {
+    margin-top: 20px; /* Space above navigation buttons */
+    text-align: center;
+  }
+  
+  .nav-buttons button {
+    padding: 12px 24px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
